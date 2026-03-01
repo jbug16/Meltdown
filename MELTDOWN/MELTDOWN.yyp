@@ -24,7 +24,9 @@
   },
   "name":"MELTDOWN",
   "resources":[
+    {"id":{"name":"oCampfire","path":"objects/oCampfire/oCampfire.yy",},},
     {"id":{"name":"oGameManager","path":"objects/oGameManager/oGameManager.yy",},},
+    {"id":{"name":"oHeatPickup","path":"objects/oHeatPickup/oHeatPickup.yy",},},
     {"id":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},},
     {"id":{"name":"oProjectile","path":"objects/oProjectile/oProjectile.yy",},},
     {"id":{"name":"oWeapon","path":"objects/oWeapon/oWeapon.yy",},},
@@ -32,6 +34,8 @@
     {"id":{"name":"rInit","path":"rooms/rInit/rInit.yy",},},
     {"id":{"name":"Init","path":"scripts/Init/Init.yy",},},
     {"id":{"name":"Player","path":"scripts/Player/Player.yy",},},
+    {"id":{"name":"sCampfire","path":"sprites/sCampfire/sCampfire.yy",},},
+    {"id":{"name":"sHeatPickup","path":"sprites/sHeatPickup/sHeatPickup.yy",},},
     {"id":{"name":"sPlayer","path":"sprites/sPlayer/sPlayer.yy",},},
     {"id":{"name":"sProjectile","path":"sprites/sProjectile/sProjectile.yy",},},
     {"id":{"name":"sWeapon","path":"sprites/sWeapon/sWeapon.yy",},},

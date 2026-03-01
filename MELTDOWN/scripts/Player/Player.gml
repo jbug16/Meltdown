@@ -14,3 +14,13 @@ function player_damage(amount) {
 		// Optional: room_restart(), room_goto(rGameOver), etc.
 	}
 }
+
+/// @description Add heat to the player (from pickups, campfires). Clamps to max_heat.
+/// @param {real} amount - Heat to add
+function player_add_heat(amount) {
+	var inst = instance_find(oPlayer, 0);
+	if (inst == noone) return;
+	if (inst.state == EntityState.Dead) return;
+
+	inst.heat = min(inst.heat + amount, inst.max_heat);
+}

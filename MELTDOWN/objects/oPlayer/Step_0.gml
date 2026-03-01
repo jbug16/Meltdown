@@ -23,3 +23,12 @@ if (h_input != 0 || v_input != 0) {
 
 x += hsp;
 y += vsp;
+
+// Heat drain (passive)
+heat -= heat_drain_per_sec / room_speed;
+heat = clamp(heat, 0, max_heat);
+
+// Freezing at 0 heat — DoT to hp
+if (heat <= 0) {
+	player_damage(freeze_damage_per_sec / room_speed);
+}

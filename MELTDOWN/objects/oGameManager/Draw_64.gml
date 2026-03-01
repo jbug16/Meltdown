@@ -8,7 +8,9 @@ var _line = 20;
 if (instance_exists(oPlayer)) {
 	draw_text(_start_x, _start_y, $"hp: {oPlayer.hp} / {oPlayer.max_hp}");
 	_start_y += _line;
-	draw_text(_start_x, _start_y, oPlayer.state == EntityState.Dead ? "DEAD" : "alive");
+	draw_text(_start_x, _start_y, $"heat: {oPlayer.heat} / {oPlayer.max_heat}");
+	_start_y += _line;
+	draw_text(_start_x, _start_y, oPlayer.state == EntityState.Dead ? "Dead" : "alive");
 	_start_y += _line;
 	draw_text(_start_x, _start_y, $"vsp: {oPlayer.vsp}");
 	_start_y += _line;

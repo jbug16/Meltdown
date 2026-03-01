@@ -28,5 +28,6 @@ if (mouse_check_button_pressed(mb_left) && shot_timer <= 0) {
 	var proj = instance_create_layer(spawn_x, spawn_y, "Instances", oProjectile);
 	proj.direction = dir;
 	proj.speed = 14;
+	proj.owner = owner;
 	shot_timer = shot_cooldown;
 }
