@@ -1,9 +1,11 @@
-// Brotato-style top-down movement — step
+// Ignore if dead
 if (state == EntityState.Dead) exit;
 
+// Input
 var h_input = (keyboard_check(vk_right) || keyboard_check(ord("D"))) - (keyboard_check(vk_left) || keyboard_check(ord("A")));
 var v_input = (keyboard_check(vk_down) || keyboard_check(ord("S"))) - (keyboard_check(vk_up) || keyboard_check(ord("W")));
 
+// Movement
 var target_hsp = 0;
 var target_vsp = 0;
 if (h_input != 0 || v_input != 0) {
@@ -25,10 +27,10 @@ x += hsp;
 y += vsp;
 
 // Heat drain (passive)
-heat -= heat_drain_per_sec / room_speed;
+heat -= heat_drain_per_sec / SECOND;
 heat = clamp(heat, 0, max_heat);
 
-// Freezing at 0 heat — DoT to hp
+// Freezing at 0 heat
 if (heat <= 0) {
-	player_damage(freeze_damage_per_sec / room_speed);
+	player_damage(freeze_damage_per_sec / SECOND);
 }

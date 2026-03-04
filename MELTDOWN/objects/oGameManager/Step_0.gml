@@ -6,3 +6,7 @@ if (global.dev_mode && keyboard_check_pressed(ord("H"))) {
 if (global.dev_mode && keyboard_check_pressed(ord("R"))) {
 	game_restart();
 }
+
+if (global.dev_mode && keyboard_check_pressed(vk_escape)) {
+	game_end();
+}

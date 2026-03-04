@@ -1,7 +1,23 @@
+//==============================================
+// GLOBALS
+//==============================================
+
 global.dev_mode = true;
 
-// Shared state machine for player and enemies
+//==============================================
+// ENUMS
+//==============================================
+
 enum EntityState {
 	Alive,
 	Dead
 }
+
+//==============================================
+// MACROS
+//==============================================
+
+#macro SECOND 60
+#macro DEFAULT_PROJECTILE_DAMAGE 10
+
+#macro PRINT show_debug_message

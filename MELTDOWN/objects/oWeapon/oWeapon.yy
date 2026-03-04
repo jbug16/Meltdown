@@ -9,8 +9,8 @@
   "name":"oWeapon",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Weapons",
+    "path":"folders/Objects/Items/Weapons.yy",
   },
   "parentObjectId":null,
   "persistent":false,
