@@ -1,20 +1,19 @@
 {
   "$GMObject":"",
-  "%Name":"oFastSnowman",
+  "%Name":"oIce",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"oProjectile","path":"objects/oProjectile/oProjectile.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oFastSnowman",
+  "name":"oIce",
   "overriddenProperties":[],
   "parent":{
-    "name":"Snowman",
-    "path":"folders/Objects/Enemies/Snowman.yy",
+    "name":"Solids",
+    "path":"folders/Objects/Solids.yy",
   },
-  "parentObjectId":{
-    "name":"parSnowman",
-    "path":"objects/parSnowman/parSnowman.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -33,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sSnowman_Fast",
-    "path":"sprites/sSnowman_Fast/sSnowman_Fast.yy",
+    "name":"sIce",
+    "path":"sprites/sIce/sIce.yy",
   },
   "spriteMaskId":null,
   "visible":true,

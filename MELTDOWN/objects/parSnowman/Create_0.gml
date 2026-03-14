@@ -28,6 +28,10 @@ attack_cooldown = 1.5;
 attack_timer = 0;
 can_attack = true;
 
+// Stop distance - enemies stop moving when this close to player (prevents spinning)
+// Set to attack_range so enemies can reach attack range but stop to prevent spinning
+stop_distance = attack_range;
+
 // Visual
 image_angle = 0;
 sprite_scale = 1.0;  // For melting effect
@@ -46,5 +50,12 @@ hit_knockback_y = 0;
 target = noone;
 find_target();
 
+// Freeze system
+freeze_ground = true;  // Whether this enemy type freezes ground
+freeze_radius = 32;  // Radius of frozen ground patches
+freeze_update_rate = 0.2;  // How often to create frozen ground (seconds)
+freeze_timer = 0;  // Timer for creating frozen ground
+freeze_duration = 30;  // How long frozen ground lasts (seconds) - longer when no enemies nearby
+
 // Collision
-collision_radius = 24; 
+collision_radius = 128; 

@@ -41,6 +41,9 @@ if (hit_knockback_timer > 0) {
 // Movement
 update_movement();
 
+// Separate from other enemies to prevent overlapping
+separate_from_enemies();
+
 // Attack system
 attack_timer -= 1 / SECOND;
 if (attack_timer <= 0) {
@@ -52,6 +55,14 @@ if (can_attack && dist_to_target <= attack_range) {
 	perform_attack();
 }
 
+// Freeze ground system
+if (freeze_ground) {
+	freeze_timer -= 1 / SECOND;
+	if (freeze_timer <= 0) {
+		create_frozen_ground();
+		freeze_timer = freeze_update_rate;
+	}
+}
 
 // Update visual effects (melting)
 update_visuals();
