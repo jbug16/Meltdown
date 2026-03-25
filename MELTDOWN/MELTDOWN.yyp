@@ -40,6 +40,7 @@
     {"id":{"name":"oProjectile","path":"objects/oProjectile/oProjectile.yy",},},
     {"id":{"name":"oSpecialSnowman","path":"objects/oSpecialSnowman/oSpecialSnowman.yy",},},
     {"id":{"name":"oTankSnowman","path":"objects/oTankSnowman/oTankSnowman.yy",},},
+    {"id":{"name":"oWaveManager","path":"objects/oWaveManager/oWaveManager.yy",},},
     {"id":{"name":"oWeapon","path":"objects/oWeapon/oWeapon.yy",},},
     {"id":{"name":"parSnowman","path":"objects/parSnowman/parSnowman.yy",},},
     {"id":{"name":"rGame","path":"rooms/rGame/rGame.yy",},},
