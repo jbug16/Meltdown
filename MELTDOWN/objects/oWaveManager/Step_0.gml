@@ -11,21 +11,14 @@ switch (phase) {
 				var w_hp = (1 + (wave - 1) * 0.12) * 2.5;
 				var w_spd = (1 + (wave - 1) * 0.04) * 1.15;
 				var w_dmg = (1 + (wave - 1) * 0.10) * 1.35;
-				array_push(spawn_queue, { enemy: oTankSnowman, hp_m: w_hp, spd_m: w_spd, dmg_m: w_dmg });
+				array_push(spawn_queue, { enemy: oBoss, hp_m: w_hp, spd_m: w_spd, dmg_m: w_dmg });
 			} else {
 				var n = min(max_enemy_count, base_enemy_count + (wave - 1) * count_per_wave);
 				var hp_b = 1 + (wave - 1) * 0.08;
 				var spd_b = 1 + (wave - 1) * 0.03;
 				var dmg_b = 1 + (wave - 1) * 0.07;
-				var t = min(1, (wave - 1) / 18);
 				for (var i = 0; i < n; i++) {
-					var r = random(1);
-					var o_en = oTankSnowman;
-					if (r < lerp(0.55, 0.28, t)) {
-						o_en = oFastSnowman;
-					} else if (r < lerp(0.55, 0.28, t) + lerp(0.30, 0.32, t)) {
-						o_en = oSpecialSnowman;
-					}
+					var o_en = snowman_pick_wave_enemy_object(wave);
 					array_push(spawn_queue, { enemy: o_en, hp_m: hp_b, spd_m: spd_b, dmg_m: dmg_b });
 				}
 			}

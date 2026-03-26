@@ -1,19 +1,21 @@
 {
   "$GMObject":"",
-  "%Name":"oIce",
+  "%Name":"oBoss",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"oHeatProjectile","path":"objects/oHeatProjectile/oHeatProjectile.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oIce",
+  "name":"oBoss",
   "overriddenProperties":[],
   "parent":{
-    "name":"Solids",
-    "path":"folders/Objects/Solids.yy",
+    "name":"Enemies",
+    "path":"folders/Objects/Enemies.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"parSnowman",
+    "path":"objects/parSnowman/parSnowman.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -32,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sIce",
-    "path":"sprites/sIce/sIce.yy",
+    "name":"sSnowman_Boss",
+    "path":"sprites/sSnowman_Boss/sSnowman_Boss.yy",
   },
   "spriteMaskId":null,
   "visible":true,

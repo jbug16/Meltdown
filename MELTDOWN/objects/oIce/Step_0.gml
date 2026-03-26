@@ -13,7 +13,7 @@ if (nearby_enemy == noone) {
 	
 	// Check for nearby projectiles - melt slower when projectiles are near
 	var nearby_projectile = noone;
-	with (oProjectile) {
+	with (oHeatProjectile) {
 		var dist = point_distance(x, y, other.x, other.y);
 		if (dist <= other.projectile_slow_range) {
 			nearby_projectile = id;

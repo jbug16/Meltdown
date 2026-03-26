@@ -23,7 +23,7 @@ if (mouse_check_button_pressed(mb_left) && shot_timer <= 0) {
 	var dir = point_direction(x, y, mouse_x, mouse_y);
 	var spawn_x = x + lengthdir_x(muzzle_offset, dir);
 	var spawn_y = y + lengthdir_y(muzzle_offset, dir);
-	var proj = instance_create_layer(spawn_x, spawn_y, "Instances", oProjectile);
+	var proj = instance_create_layer(spawn_x, spawn_y, "Instances", oHeatProjectile);
 	
 	proj.direction = dir;
 	proj.speed = 14;

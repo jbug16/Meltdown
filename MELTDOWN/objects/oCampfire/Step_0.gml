@@ -1,5 +1,5 @@
 // Check for overlapping projectile
-var _p = instance_place(x, y, oProjectile);
+var _p = instance_place(x, y, oHeatProjectile);
 if (_p != noone) {
 	instance_destroy(_p);
 	hits_left--;
