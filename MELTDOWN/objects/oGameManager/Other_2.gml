@@ -1,1 +1,1 @@
-room_goto(rGame);
+room_goto(rArena1);

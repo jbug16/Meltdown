@@ -1,7 +1,9 @@
 // Inherit the parent event
 event_inherited();
 
-// Slow unnatural movement, pauses then sudden burst
+// Less HP
+max_hp = 15;
+hp = max_hp;
 
 // Movement - Slow base speed, but will burst faster
 move_speed = 1.0;  // Slow unnatural movement

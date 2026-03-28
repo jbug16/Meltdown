@@ -4,7 +4,7 @@ event_inherited();
 // Faster movement, less health, smaller freeze patches, aggressive rushing
 
 // Health - Less HP
-max_hp = 20;
+max_hp = 30;
 hp = max_hp;
 
 // Movement - Much faster

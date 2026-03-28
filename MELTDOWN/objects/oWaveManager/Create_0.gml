@@ -1,11 +1,9 @@
 enemy_layer_name = "Enemies";
-boss_every = 2;
+waves_per_level = 5;
 
 base_inter_wave_delay = SECOND * 3;
 inter_wave_delay_ramp = SECOND / 6;
 
-base_enemy_count = 4;
-count_per_wave = 2;
 max_enemy_count = 36;
 
 spawn_interval_frames = max(1, SECOND / 4);

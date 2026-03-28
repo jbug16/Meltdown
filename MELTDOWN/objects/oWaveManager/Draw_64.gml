@@ -25,11 +25,20 @@ var _line = 20;
 
 draw_set_halign(fa_right);
 
+var _gm_draw = instance_find(oGameManager, 0);
+var _lv = (_gm_draw != noone) ? _gm_draw.current_level : 1;
+draw_text(_start_x, _start_y, $"Level {_lv}");
+
+_start_y += _line;
+
 var _line_wave = $"Wave {wave}";
 if ((phase == "spawning" || phase == "combat") && is_boss_wave) {
 	_line_wave += "  — BOSS";
-} else if (phase == "inter_wave" && inter_wave_timer > 0 && (wave mod boss_every == 0)) {
+} else if (phase == "inter_wave" && inter_wave_timer > 0 && (wave == waves_per_level)) {
 	_line_wave += "  — BOSS NEXT";
+}
+if (phase == "victory") {
+	_line_wave = "RUN COMPLETE";
 }
 
 draw_text(_start_x, _start_y, _line_wave);

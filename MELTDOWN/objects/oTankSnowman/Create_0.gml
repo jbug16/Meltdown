@@ -4,7 +4,7 @@ event_inherited();
 // High health, slower movement, larger freeze radius
 
 // Health - High HP
-max_hp = 150;
+max_hp = 70;
 hp = max_hp;
 
 // Movement - Slower

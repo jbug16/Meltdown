@@ -46,7 +46,9 @@
     {"id":{"name":"oWeapon","path":"objects/oWeapon/oWeapon.yy",},},
     {"id":{"name":"parProjectile","path":"objects/parProjectile/parProjectile.yy",},},
     {"id":{"name":"parSnowman","path":"objects/parSnowman/parSnowman.yy",},},
-    {"id":{"name":"rGame","path":"rooms/rGame/rGame.yy",},},
+    {"id":{"name":"rArena1","path":"rooms/rArena1/rArena1.yy",},},
+    {"id":{"name":"rArena2","path":"rooms/rArena2/rArena2.yy",},},
+    {"id":{"name":"rArena3","path":"rooms/rArena3/rArena3.yy",},},
     {"id":{"name":"rInit","path":"rooms/rInit/rInit.yy",},},
     {"id":{"name":"Effects","path":"scripts/Effects/Effects.yy",},},
     {"id":{"name":"Init","path":"scripts/Init/Init.yy",},},
@@ -70,7 +72,9 @@
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
     {"roomId":{"name":"rInit","path":"rooms/rInit/rInit.yy",},},
-    {"roomId":{"name":"rGame","path":"rooms/rGame/rGame.yy",},},
+    {"roomId":{"name":"rArena1","path":"rooms/rArena1/rArena1.yy",},},
+    {"roomId":{"name":"rArena2","path":"rooms/rArena2/rArena2.yy",},},
+    {"roomId":{"name":"rArena3","path":"rooms/rArena3/rArena3.yy",},},
   ],
   "templateType":null,
   "TextureGroups":[

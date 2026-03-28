@@ -288,23 +288,93 @@ function snowman_configure_ice_instance(ice_inst, duration_sec, radius_px) {
 /// @return {real}
 function snowman_get_wave_index() {
 	var _wm = instance_find(oWaveManager, 0);
+	var _gm = instance_find(oGameManager, 0);
 	if (_wm == noone) return 1;
-	return _wm.wave;
+	var _lvl = (_gm != noone) ? _gm.current_level : 1;
+	var _wpl = _wm.waves_per_level;
+	var _idx = (_lvl - 1) * _wpl + _wm.wave;
+	// Slightly harder minion scaling during placeholder final boss
+	if (_gm != noone && _wm.wave >= _wpl && _gm.final_boss_spawned && _gm.current_level == 3) {
+		_idx += 1;
+	}
+	return _idx;
 }
 
-/// @description Random snowman type for a wave — same weights as oWaveManager regular spawns
-/// @param {real} wave_index
+/// @description 1-based index through regular waves only (each level's wave 5 boss does not advance this).
+/// @param {real} run_wave_index Global wave index from oWaveManager (1..15 across three levels).
+/// @return {real}
+function snowman_run_regular_ordinal(run_wave_index) {
+	return run_wave_index - floor((run_wave_index - 1) / 5);
+}
+
+/// @description Enemy count for a non-boss wave — starts small, +1 each regular wave.
+/// @param {real} run_wave_index
+/// @param {real} max_cap
+/// @return {real}
+function snowman_regular_wave_enemy_count(run_wave_index, max_cap) {
+	var _ord = snowman_run_regular_ordinal(run_wave_index);
+	var n = 2 + (_ord - 1);
+	return min(max_cap, n);
+}
+
+/// @description Random snowman for current run difficulty — unlocks types over time (fast → tank → special → mixed).
+/// @param {real} wave_index Global run wave (same as oWaveManager _d).
 /// @return {asset.GMObject}
 function snowman_pick_wave_enemy_object(wave_index) {
-	var _t = min(1, (wave_index - 1) / 18);
+	var _d = wave_index;
 	var _r = random(1);
-	var _o_en = oTankSnowman;
-	if (_r < lerp(0.55, 0.28, _t)) {
-		_o_en = oFastSnowman;
-	} else if (_r < lerp(0.55, 0.28, _t) + lerp(0.30, 0.32, _t)) {
-		_o_en = oSpecialSnowman;
+	
+	if (_d <= 2) {
+		return oFastSnowman;
 	}
-	return _o_en;
+	
+	if (_d <= 4) {
+		var _tank_w = (_d == 3) ? 0.22 : 0.42;
+		if (_r < _tank_w) {
+			return oTankSnowman;
+		}
+		return oFastSnowman;
+	}
+	
+	// d=5 is first boss summons — still fast + tank only
+	if (_d <= 5) {
+		if (_r < 0.46) {
+			return oFastSnowman;
+		}
+		return oTankSnowman;
+	}
+	
+	// d=6–7: level 2 early waves — introduce special (creeper) lightly
+	if (_d <= 7) {
+		if (_r < 0.10) {
+			return oSpecialSnowman;
+		}
+		if (_r < 0.56) {
+			return oFastSnowman;
+		}
+		return oTankSnowman;
+	}
+	
+	if (_d <= 10) {
+		var _spec_w = 0.14 + (_d - 8) * 0.06;
+		if (_r < _spec_w) {
+			return oSpecialSnowman;
+		}
+		_r = random(1);
+		if (_r < 0.48) {
+			return oFastSnowman;
+		}
+		return oTankSnowman;
+	}
+	
+	var _t = min(1, (_d - 11) / 12);
+	if (_r < lerp(0.22, 0.34, _t)) {
+		return oSpecialSnowman;
+	}
+	if (_r < lerp(0.22, 0.34, _t) + lerp(0.38, 0.30, _t)) {
+		return oFastSnowman;
+	}
+	return oTankSnowman;
 }
 
 /// @description Boss: circular slam of grid-snapped ice (same cell layout as create_frozen_ground; stacks on existing ice)
