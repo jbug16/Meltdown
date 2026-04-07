@@ -16,13 +16,22 @@ var _logo_y = _gh * 0.22;
 draw_sprite_ext(sLogo, 0, _cx - _lw * 0.5, _logo_y - _lh * 0.5, _logo_scale, _logo_scale, 0, c_white, 1);
 
 var _title_y = _logo_y + _lh * 0.5 + 48;
+var _title_scale = 1.85;
+
 draw_set_halign(fa_center);
 draw_set_valign(fa_top);
+
+draw_set_color(c_black);
+draw_text_transformed(_cx + 2, _title_y + 2, "MELTDOWN", _title_scale, _title_scale, 0);
+draw_set_color(make_color_rgb(240, 244, 252));
+draw_text_transformed(_cx, _title_y, "MELTDOWN", _title_scale, _title_scale, 0);
+
+var _subtitle_y = _title_y + string_height("MELTDOWN") * _title_scale + 16;
 draw_set_color(_text_dim);
-draw_text(_cx, _title_y, "SURVIVE THE COLD");
+draw_text(_cx, _subtitle_y, "SURVIVE THE COLD");
 
 var _line_h = gui_menu_line_height();
-var _menu_y = _title_y + 72;
+var _menu_y = _subtitle_y + string_height("M") + 48;
 
 for (var i = 0; i < menu_count; i++) {
 	gui_menu_draw_option(_cx, _menu_y + i * _line_h, menu_options[i], i == menu_selection);

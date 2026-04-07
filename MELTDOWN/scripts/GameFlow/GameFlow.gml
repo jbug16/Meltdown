@@ -4,6 +4,24 @@ function game_is_paused() {
 	return (_gm != noone && _gm.pause);
 }
 
+/// @description New run from arena 1 (same as main menu Play). Prefer this over game_restart(), which reloads rInit and the Game Start event sends the player to the main menu.
+function game_restart_run() {
+	var _gm = instance_find(oGameManager, 0);
+	if (_gm != noone) {
+		with (_gm) {
+			current_level = 1;
+			final_boss_spawned = false;
+			pause = false;
+			game_over = false;
+			game_over_menu_index = 0;
+		}
+	}
+	if (instance_exists(oPauseManager)) {
+		with (oPauseManager) instance_destroy();
+	}
+	room_goto(rArena1);
+}
+
 /// @description Vertical spacing between menu option baselines (matches main menu).
 function gui_menu_line_height() {
 	return string_height("M") + 18;

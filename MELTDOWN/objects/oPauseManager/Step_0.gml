@@ -18,13 +18,7 @@ switch (menu_index) {
 		instance_destroy();
 		break;
 	case 1:
-		if (_gm != noone) {
-			_gm.pause = false;
-			_gm.current_level = 1;
-			_gm.final_boss_spawned = false;
-		}
-		instance_destroy();
-		game_restart();
+		game_restart_run();
 		break;
 	case 2:
 		if (_gm != noone) _gm.pause = false;

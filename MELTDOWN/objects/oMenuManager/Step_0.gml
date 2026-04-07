@@ -17,16 +17,7 @@ if (keyboard_check_pressed(vk_escape)) {
 if (keyboard_check_pressed(vk_enter) || keyboard_check_pressed(vk_space)) {
 	switch (menu_selection) {
 		case 0:
-			if (instance_exists(oGameManager)) {
-				with (oGameManager) {
-					current_level = 1;
-					final_boss_spawned = false;
-					pause = false;
-					var _p = instance_find(oPauseManager, 0);
-					if (_p != noone) instance_destroy(_p);
-				}
-			}
-			room_goto(rArena1);
+			game_restart_run();
 			break;
 		case 1:
 			game_end();
