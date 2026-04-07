@@ -1,3 +1,5 @@
+if (game_is_paused()) exit;
+
 // Check for overlapping projectile
 var _p = instance_place(x, y, oHeatProjectile);
 if (_p != noone) {

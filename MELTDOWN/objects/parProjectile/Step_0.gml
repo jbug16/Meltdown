@@ -1,3 +1,5 @@
+if (game_is_paused()) exit;
+
 // Move in facing direction
 image_angle = direction;
 x += lengthdir_x(speed, direction);

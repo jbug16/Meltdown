@@ -1,3 +1,5 @@
+if (game_is_paused()) exit;
+
 // Follow owner, aim at mouse, shoot with cooldown
 if (!instance_exists(owner)) {
 	instance_destroy();

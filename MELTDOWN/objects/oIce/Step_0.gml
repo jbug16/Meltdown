@@ -1,3 +1,5 @@
+if (game_is_paused()) exit;
+
 // Check for nearby enemies - if enemies nearby, don't melt
 var nearby_enemy = noone;
 with (parSnowman) {

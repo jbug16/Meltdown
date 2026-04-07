@@ -1,5 +1,8 @@
 event_inherited();
 
+// HUD (oWaveManager Draw GUI)
+boss_ui_name = "KRAMPUS";
+
 freeze_ground = false;
 pathfinding_active = false;
 

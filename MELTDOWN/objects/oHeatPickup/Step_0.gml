@@ -1,3 +1,5 @@
+if (game_is_paused()) exit;
+
 // Apply magnetic pull toward player when in range
 if (instance_exists(oPlayer) && oPlayer.state == EntityState.Alive) {
 	var _dist = point_distance(x, y, oPlayer.x, oPlayer.y);

@@ -1,3 +1,5 @@
+if (game_is_paused()) exit;
+
 // Ignore if dead
 if (state == EntityState.Dead) exit;
 

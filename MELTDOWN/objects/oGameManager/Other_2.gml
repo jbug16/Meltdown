@@ -1,1 +1,1 @@
-room_goto(rArena1);
+room_goto(rMainMenu);

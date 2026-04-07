@@ -1,3 +1,5 @@
+if (game_is_paused()) exit;
+
 // Krampus — does not inherit parSnowman Step (no melee chase / passive ice trail)
 if (state == EntityState.Dead) exit;
 

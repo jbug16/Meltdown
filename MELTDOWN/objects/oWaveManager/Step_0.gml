@@ -1,3 +1,5 @@
+if (game_is_paused()) exit;
+
 switch (phase) {
 	case "inter_wave":
 		if (inter_wave_timer > 0) {

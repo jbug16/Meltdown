@@ -27,7 +27,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.14.3.217",
+    "IDEVersion":"2024.14.4.222",
   },
   "name":"MELTDOWN",
   "resources":[
@@ -39,6 +39,8 @@
     {"id":{"name":"oHeatProjectile","path":"objects/oHeatProjectile/oHeatProjectile.yy",},},
     {"id":{"name":"oIce","path":"objects/oIce/oIce.yy",},},
     {"id":{"name":"oIceProjectile","path":"objects/oIceProjectile/oIceProjectile.yy",},},
+    {"id":{"name":"oMenuManager","path":"objects/oMenuManager/oMenuManager.yy",},},
+    {"id":{"name":"oPauseManager","path":"objects/oPauseManager/oPauseManager.yy",},},
     {"id":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},},
     {"id":{"name":"oSpecialSnowman","path":"objects/oSpecialSnowman/oSpecialSnowman.yy",},},
     {"id":{"name":"oTankSnowman","path":"objects/oTankSnowman/oTankSnowman.yy",},},
@@ -50,7 +52,9 @@
     {"id":{"name":"rArena2","path":"rooms/rArena2/rArena2.yy",},},
     {"id":{"name":"rArena3","path":"rooms/rArena3/rArena3.yy",},},
     {"id":{"name":"rInit","path":"rooms/rInit/rInit.yy",},},
+    {"id":{"name":"rMainMenu","path":"rooms/rMainMenu/rMainMenu.yy",},},
     {"id":{"name":"Effects","path":"scripts/Effects/Effects.yy",},},
+    {"id":{"name":"GameFlow","path":"scripts/GameFlow/GameFlow.yy",},},
     {"id":{"name":"Init","path":"scripts/Init/Init.yy",},},
     {"id":{"name":"Player","path":"scripts/Player/Player.yy",},},
     {"id":{"name":"Snowman","path":"scripts/Snowman/Snowman.yy",},},
@@ -75,6 +79,7 @@
     {"roomId":{"name":"rArena1","path":"rooms/rArena1/rArena1.yy",},},
     {"roomId":{"name":"rArena2","path":"rooms/rArena2/rArena2.yy",},},
     {"roomId":{"name":"rArena3","path":"rooms/rArena3/rArena3.yy",},},
+    {"roomId":{"name":"rMainMenu","path":"rooms/rMainMenu/rMainMenu.yy",},},
   ],
   "templateType":null,
   "TextureGroups":[
